@@ -13,9 +13,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render  'layouts/flash' %>
-<%= render  'layouts/navigation' %>
-<%= yield %>
+<div class="container">
+  <%= render 'layouts/flash' %>
+  <%= render 'layouts/navigation' %>
+  <div class="row">
+    <%= render 'layouts/sidebar' %>
+    <%= yield %>
+  </div>
 
+</div>
 </body>
 </html>
