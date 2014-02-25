@@ -10,6 +10,18 @@
   <strong>Description:</strong>
   <%= @project.description %>
 </p>
+ <h1> list of tickets </h1>
 
+<% @tickets.each do |ticket| %>
+    <tr>
+      <td><%= ticket.title %></td>
+      <td><%= ticket.description %></td>
+      <td><%= ticket.project %></td>
+      <td><%= link_to 'Show', project_ticket_path(@project,ticket) %></td>
+      <td><%= link_to 'Edit', edit_project_ticket_path(@project,ticket) %></td>
+      <td><%= link_to 'Destroy',project_ticket_path(@project,ticket), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+<% end %>
 <%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Back', projects_path %> |</br>
+<%= link_to 'New Ticket', new_project_ticket_path(@project) %>
