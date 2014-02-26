@@ -5,10 +5,17 @@
         Akira
       </li>
       <li class="active">
-        <a href="index.htm"><i class="icon-white icon-home"></i> Dashboard</a>
+
+        <%= link_to dashboard_index_path do %>
+            <i class="icon-white icon-home"></i>
+            <%= t(:Dashboard).html_safe %>
+        <% end %>
       </li>
       <li>
-        <a href="projects.htm"><i class="icon-folder-open"></i> Projects</a>
+        <%= link_to projects_path do %>
+            <i class="icon-folder-open"></i>
+            <%= t(:Projects).html_safe %>
+        <%end%>
       </li>
       <li>
         <a href="tasks.htm"><i class="icon-check"></i> Tasks</a>

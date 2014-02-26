@@ -1,29 +1,48 @@
 <div class="span9">
-  <p id="notice"><%= notice %></p>
-  <% title(@project.name, "Projects") %>
-
-  <p>
-    <strong>Name:</strong>
-    <%= @project.name %>
-  </p>
-
-   <p>
-    <strong>Description:</strong>
-    <%= @project.description %>
-   </p>
-   <h1> list of tickets </h1>
-
-   <% @tickets.each do |ticket| %>
-     <tr>
-       <td><%= ticket.title %></td>
-       <td><%= ticket.description %></td>
-       <td><%= ticket.project %></td>
-       <td><%= link_to 'Show', project_ticket_path(@project,ticket) %></td>
-       <td><%= link_to 'Edit', edit_project_ticket_path(@project,ticket) %></td>
-       <td><%= link_to 'Destroy',project_ticket_path(@project,ticket), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <h1>
+    Project <%= @project.name%>
+  </h1>
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>
+        Title
+      </th>
+      <th>
+        Description
+      </th>
+       <th>
+        Created date
+      </th>
+       <th>
+        Progress
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @tickets.each do |ticket| %>
+    <tr>
+      <td>
+        <%= ticket.title %>
+      </td>
+      <td>
+        <%= ticket.description%>Monsters Inc
+      </td>
+      <td>
+        <%= ticket.created_at%>
+      </td>
+      <td>
+        <div class="progress">
+          <div class="bar" style="width: 60%;"></div>
+        </div>
+      </td>
      </tr>
-  <% end %>
-  <%= link_to 'Edit', edit_project_path(@project) %> |
-  <%= link_to 'Back', projects_path %> |</br>
-  <%= link_to 'New Ticket', new_project_ticket_path(@project) %>
+    <%end%>
+  </tbody>
+  </table>
+  <a class="toggle-link" href="#new-project" id="new_project_page"><i class="icon-plus"></i> New Ticket</a>
+  <div id="new-project" class="form-horizontal hidden">
+    <%= render :partial => "tickets/form"%>
+  </div>
 </div>
+                                              test

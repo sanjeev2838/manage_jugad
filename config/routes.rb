@@ -1,8 +1,17 @@
 MyTicketee::Application.routes.draw do
 
+  resources :dashboard
+
   get "dashboard/index"
-  devise_for :users
-  root :to => "dashboard#index"
+
+  devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions" } do
+    get '/sign_in', :to => 'devise/sessions#new'
+
+  end
+  devise_scope :user do
+     root :to => 'devise/registrations#new'
+     #    root :to => 'dashboard#index'
+  end
 
   resources :projects do
     resources :tickets

@@ -1,16 +1,21 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @projects = Project.all
+    @project = Project.new
+
   end
 
   def show
     @tickets = @project.tickets.all
+    @ticket = @project.tickets.build
   end
 
   def new
     @project = Project.new
+
   end
 
   def edit
@@ -21,7 +26,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+        format.html { redirect_to projects_path, notice: 'Project was successfully created.' }
         format.json { render action: 'show', status: :created, location: @project }
       else
         format.html { render action: 'new' }

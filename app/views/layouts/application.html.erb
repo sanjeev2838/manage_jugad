@@ -14,10 +14,13 @@
 </head>
 <body>
 <div class="container">
-  <%= render 'layouts/flash' %>
   <%= render 'layouts/navigation' %>
+  <%= render 'layouts/flash' %>
+
   <div class="row">
-    <%= render 'layouts/sidebar' %>
+    <% if user_signed_in?   %>
+        <%= render 'layouts/sidebar' %>
+    <%end%>
     <%= yield %>
   </div>
 

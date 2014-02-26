@@ -14,7 +14,7 @@ h1 {padding-bottom:0.2em;}
 /* dashboard */
 .summary {display:table; width:100%; padding:0; margin:0 0 20px 0;}
 .summary ul {margin:0; padding:0; overflow:hidden; display:table-row;}
-.summary li {margin:0; padding:19px; display:table-cell; border-right:1px solid #eee;}
+.summary li {margin:0; paimg_divdding:19px; display:table-cell; border-right:1px solid #eee;}
 .summary li:last-child {border:none;}
 .summary a {display:block; font-size:1.2em; line-height:1.4em; text-transform:uppercase; color:#000;}
 .summary .count {display:block; font-size:1.75em; font-weight:bold;}
@@ -23,7 +23,7 @@ h1 {padding-bottom:0.2em;}
 	.ie7 .summary {display:block;}
 	.ie7 .summary ul {margin:0; padding:0; overflow:hidden; display:block;}
 	.ie7 .summary li {float:left;}
-	
+
 	.ielt9 .summary .last {border:none;}
 
 /* tasks */
@@ -52,3 +52,14 @@ h1 {padding-bottom:0.2em;}
 .zebra-list li:nth-child(odd) {background-color:#F9F9F9;}
 .zebra-list li:first-child {-webkit-border-radius:4px 4px 0 0; -moz-border-radius:4px 4px 0 0; border-radius:4px 4px 0 0;}
 .zebra-list li:last-child {border-bottom:1px solid #DDD; -webkit-border-radius:0 0 4px 4px; -moz-border-radius:0 0 4px 4px; border-radius:0 0 4px 4px;}
+
+
+.img_div{
+    height: 420px;
+}
+.form-controls-sign-up{
+    padding: 5px 0px 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+}
