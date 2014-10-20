@@ -1,4 +1,4 @@
 Project description :- 
-1.) Twitter bootstrap implementation of project management related template 
-2.) Based on ticketee application from ( rails 3 in action )
-3.) Only added few basic feature needs to add more with time
+ Twitter bootstrap implementation of project management related template 
+ Based on ticketee application from ( rails 3 in action )
+ Only added few basic feature needs to add more with time
